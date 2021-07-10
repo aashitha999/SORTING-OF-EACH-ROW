@@ -1,0 +1,44 @@
+public class Sortingofeachrow
+{
+	static int sortRowWise(int m[][])
+	{
+		for (int i = 0; i < m.length; i++)
+		{
+			for (int j = 0; j < m[i].length; j++)
+			{
+			for (int k = 0; k < m[i].length - j - 1; k++)
+
+			{
+					if (m[i][k] > m[i][k + 1])
+					{
+						int t = m[i][k];
+						m[i][k] = m[i][k + 1];
+						m[i][k + 1] = t;
+					}
+				}
+			}
+		}
+    	for (int i = 0; i < m.length; i++)
+    	{
+			for (int j = 0; j < m[i].length; j++)
+				System.out.print(m[i][j] + " ");
+			System.out.println();
+		}
+		return 0;
+	}
+	public static void main(String args[])
+	{
+		int m[][] = 
+		{ {10,15,13 },
+		  {11, 8, 5 },
+		  { 9, 4, 3 }
+	    };
+		sortRowWise(m);
+	}
+}
+
+
+output:
+10 13 15 
+5 8 11 
+3 4 9 
